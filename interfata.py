@@ -640,7 +640,8 @@ class interfata():
         self.filewin = tk.Toplevel(self.root)
         self.filewin.title("Prizonieri")
         self.filewin.geometry('1000x600')
-        self.query2 = "SELECT * FROM prizonier"
+        self.query2 = "SELECT * FROM prizonier WHERE inchisoare_denumire_inchisoare = " + str(self.inchisoare.get()).replace('{','\'').replace('}','\'')
+        
         self.connect2 = self.connect.execute(self.query2)
         self.result2 = self.connect.fetchall()
 
